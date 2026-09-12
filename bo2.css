@@ -1,0 +1,127 @@
+@font-face{font-family:Menu;src:url('assets/menu-font.ttf')}@font-face{font-family:Text;src:url('assets/menu-text.ttf');font-weight:200 700}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#0d100d;color:#e5e5da;font:16px Text,'Arial Narrow',sans-serif;background-image:repeating-linear-gradient(90deg,transparent 0 3px,#ffffff02 3px 4px)}button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:#12150f;border:1px solid #424736;padding:9px 13px;min-height:44px}button:hover{border-color:#ed914e;color:#ffad70}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #fb9b52;outline-offset:3px}button[aria-pressed=true]{color:#f59a54;border-color:#ea8940;background:#2e2115}#bo2-app{min-height:100dvh;padding:30px clamp(16px,4vw,64px) 0;display:flex;flex-direction:column}header{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #393e30;padding:22px 0 25px}.eyebrow{font:12px Menu,sans-serif;color:#979c8b;letter-spacing:2px;margin:0 0 8px}h1{font:clamp(30px,4vw,52px)/1 Menu,sans-serif;margin:0}.brand{font-size:18px}.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:32px;flex:1}aside{min-width:0}#classes{display:flex;flex-direction:column;gap:4px}#classes button{border-color:transparent;background:transparent;text-align:left;font-size:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#classes button[aria-pressed=true]{border-left:3px solid #ef9148;color:#ef9148;background:#ed91490b}#rename-form{margin-top:24px}label,legend{font:12px Menu;color:#a4ab95;letter-spacing:1px}.rename-row{display:flex;margin-top:7px;gap:5px}input{min-width:0;width:100%;background:#030503;border:1px solid #404735;color:#ececde;padding:8px}#rename-form button{font-size:13px;padding:6px 10px}.saved-note{color:#939e84;font-size:12px;line-height:1.5}.loadout{min-width:0}.toolbar{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px;justify-content:space-between}fieldset{margin:0;padding:0;border:0}legend{margin-bottom:6px}.segmented{display:flex;gap:0}.segmented button{font-size:14px;padding:8px 14px}#generate{background:#d9752d;border:1px solid #ffa767;color:#0c0d09;font-family:Menu;font-size:19px;letter-spacing:.4px}kbd{font:11px Menu;padding:3px;border:1px solid #6e391c;margin-left:9px}.allocation{display:flex;align-items:center;gap:12px;margin-top:17px}#point-bars{display:flex;gap:4px;flex:1}#point-bars i{height:6px;flex:1;background:#363a2b}#point-bars i.used{background:linear-gradient(#ffb577,#d46c27)}#points{font:23px Menu;color:#ec9859;min-width:48px;text-align:right}#message{min-height:21px;font-size:13px;color:#f9b783;margin:6px 0 10px}.loadout-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,1fr);gap:16px}.weapons{display:grid;grid-template-rows:repeat(2,350px);gap:16px}.panel{border:1px solid #3c4230;background:#000;position:relative;min-width:0}.panel.locked{border:2px solid #f28a37;box-shadow:0 0 0 1px #f28a3733}.weapon-card{height:350px;padding:14px;display:grid;grid-template-rows:32px 128px 36px 110px;gap:4px}.panel.locked.weapon-card{padding:13px}.panel-header{display:flex;align-items:center;justify-content:space-between;gap:6px}h2{font:16px Menu;color:#a1aa91;letter-spacing:.7px;margin:0}.lock{height:32px;min-height:32px;width:36px;padding:5px;display:grid;place-items:center;flex-shrink:0}.lock svg{width:20px;height:20px}.weapon-image{width:100%;height:128px;object-fit:contain}.weapon-name{font:24px Menu;margin:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;align-self:center}.mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;height:110px}.mod-box{height:110px;min-width:0;overflow:hidden;background:#0a0d08;border:1px solid #323a27;display:flex;flex-direction:column;padding:7px}.mod-box h3{font:12px Menu;letter-spacing:.7px;color:#9fa98b;margin:0 0 6px}.mod-images{display:flex;align-items:center;justify-content:center;gap:5px;flex:1;min-height:0;overflow:hidden}.mod-images img{width:calc((100% - 10px)/3);max-width:76px;height:70px;object-fit:contain;min-width:0}.mod-images.camo img{width:70px;height:70px;object-fit:cover}.empty{color:#737d64;font-size:13px}.right-column{display:grid;grid-template-rows:1.5fr 1fr 1fr;gap:16px}.right-column .panel{padding:14px}.right-column .panel.locked{padding:13px}.perk-row{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #292f20;min-height:68px}.perk-row:last-child{border-bottom:0}.perk-copy{font-size:14px;line-height:1.4}.perk-copy small{display:block;font:12px Menu;color:#929d7e}.perk-icons{display:flex;flex-shrink:0}.perk-icons img{width:54px;height:54px;object-fit:contain}.equipment-body{display:flex;align-items:center;justify-content:space-between;gap:12px;height:88px}.equipment-body img{height:76px;width:76px;object-fit:contain}.equipment-name{font-size:17px}.equipment select{width:100%;background:#0e130a;color:#cfdbc0;border:1px solid #39462d;padding:8px;min-height:42px;font-size:13px}.cost-note{color:#9ca88b;font-size:12px}details{margin:12px 0 20px;font-size:12px;color:#aab39b}summary{cursor:pointer;width:fit-content;min-height:24px}footer{border-top:1px solid #3e4532;margin-top:26px;display:flex;justify-content:space-between;padding:18px 0;color:#919c7f;font:13px Menu}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(min-width:1600px){.layout{grid-template-columns:250px minmax(0,1fr)}.loadout-grid{grid-template-columns:1.45fr 1fr}.mod-images img{max-width:86px}}
+@media(max-width:1050px){.layout{grid-template-columns:160px minmax(0,1fr);gap:20px}.loadout-grid{grid-template-columns:1fr}.right-column{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}#perks{grid-column:1/-1}.perk-row{min-height:60px}.weapons{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:350px}.weapon-card{padding:10px}.panel.locked.weapon-card{padding:9px}.mods{gap:6px}.mod-box{padding:5px}.mod-images{gap:1px}.mod-images img{width:33%;height:58px}.mod-images.camo img{width:58px;height:58px}}
+@media(max-width:760px){#bo2-app{padding:16px 14px 0}header{padding:16px 0 22px}.layout{display:block}#classes{flex-direction:row;overflow-x:auto;padding-bottom:8px;gap:6px}#classes button{font-size:17px;min-width:105px;max-width:170px;border:1px solid #323a28}#rename-form{margin:12px 0 0;max-width:400px}.saved-note{margin:8px 0 20px}.toolbar{justify-content:flex-start}.toolbar fieldset{flex:1}.segmented button{flex:1;padding:8px 10px}#generate{width:100%}.loadout-grid{display:block}.weapons{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(2,350px)}.weapon-card{padding:14px}.panel.locked.weapon-card{padding:13px}.mod-box{padding:7px}.mod-images img{width:calc((100% - 10px)/3);height:70px}.mod-images.camo img{width:70px;height:70px}.right-column{margin-top:16px;display:grid;grid-template-columns:1fr;gap:16px}#perks{grid-column:auto}.perk-row{min-height:76px}.perk-icons img{width:62px;height:62px}.equipment-body{height:88px}footer .brand{font:17px Text}header .brand{font-size:15px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+/* Names stay visually consistent in the footer. */
+footer .brand{font:17px Text,sans-serif}
+@media(max-width:760px){.segmented button{white-space:nowrap;font-size:13px;padding:8px}.toolbar fieldset{min-width:140px}#classes button{flex-shrink:0}.mod-images img{touch-action:manipulation}}
+/* BO2 menu treatment: near-black texture, quiet framing, orange selection. */
+body{background-color:#080909;background-image:radial-gradient(ellipse at 38% 45%,#48372512,transparent 48%),radial-gradient(ellipse at 75% 30%,#31353014,transparent 55%),repeating-linear-gradient(90deg,transparent 0 2px,#b9b4a006 2px 3px),linear-gradient(180deg,#070808,#111310 48%,#060807);background-attachment:fixed;color:#deded5}
+#bo2-app{background:linear-gradient(180deg,#0005,transparent 22%,transparent 78%,#0006)}
+header{border-color:#3a3d34}h1{text-shadow:0 2px 3px #000}
+.eyebrow{color:#74796e}.saved-note{color:#767e6e}
+.panel{background:#000;border-color:#20251b}
+.mod-box{background:#030502;border-color:#1e2419}
+.mod-box h3,h2,.perk-copy small,label,legend{color:#919987}
+.perk-row{border-color:#1c2117}
+#classes button[aria-pressed=true]{background:transparent;border-color:transparent;border-left-color:#ef9148;text-shadow:0 0 8px #d4702c33}
+button{background:#090c08;border-color:#343c2a}
+.segmented button{background:#060806;border-color:#292e23;color:#aab19f}
+.segmented button[aria-pressed=true]{background:linear-gradient(0deg,#c46b2219,transparent);border-color:#353829;border-bottom:2px solid #ec8b42;color:#f2a66a}
+#generate{background:linear-gradient(#171b12,#080b06);border-color:#5a634a;color:#e6e9da;text-shadow:0 1px 2px #000}
+#generate:hover{border-color:#ed914e;color:#ffad70}
+kbd{background:#172417;border-color:#647053;color:#c9d0bb}
+input,.equipment select{background:#040603;border-color:#2a3321;color:#c3cdb6}
+.lock{background:#080c06;border-color:#343d2a;color:#8f9e7b}
+.panel.locked{border-color:#f28a37;box-shadow:0 0 0 1px #f28a3726}
+.lock[aria-pressed=true]{background:#352111;border-color:#ee8c42;color:#ffac69}
+#point-bars i{background:#282c22}#point-bars i.used{background:linear-gradient(#ffb675,#d06b2b);box-shadow:0 1px 0 #050604}
+footer{border-color:#343b2b;background:linear-gradient(transparent,#0005);color:#7f8b70}
+@media(max-width:760px){#classes button{background:#050704;border-color:#252d1e}#classes button[aria-pressed=true]{border-color:#434930;border-left-color:#ef9148}}
+/* Compact Create-a-Class composition. Settings stay beside the class list. */
+#bo2-app{max-width:1120px;margin:0 auto;padding-top:22px;background:none}
+header{padding:18px 0 22px}h1{font-size:38px}.build-label{font:10px Menu;color:#8d9580}.layout{grid-template-columns:185px minmax(0,1fr);gap:30px;flex:none}
+#classes{gap:0}#classes button{min-height:34px;padding:3px 8px;font-size:21px;border-left:2px solid transparent}
+.toolbar{margin-top:28px;display:flex;flex-direction:column;align-items:stretch;gap:15px}.toolbar fieldset{width:100%}.segmented button{font:14px Menu;flex:1;padding:6px;min-height:34px;border-color:#22281c}.segmented button[aria-pressed=true]{border-color:transparent;border-bottom-color:#dd8037;background:transparent}
+legend{font-size:11px;color:#77816b}.rename-menu{margin:22px 0 8px}.rename-menu summary{font:14px Menu;color:#a1aa8e}#rename-form{margin-top:10px}.saved-note{font:11px Menu;color:#65715a}
+.allocation{margin-top:4px;position:relative;padding-top:20px}#points{position:absolute;right:0;top:-5px;font-size:19px}#point-bars{gap:4px}#point-bars i{height:5px}
+#message{margin:3px 0;min-height:17px;font-size:12px}.loadout-grid{grid-template-columns:minmax(0,1.25fr) minmax(210px,1fr);gap:20px}.weapons{grid-template-rows:repeat(2,300px);gap:12px}
+.weapon-card{height:300px;grid-template-rows:24px 102px 24px 110px;padding:10px;gap:4px}.panel.locked.weapon-card{padding:9px}.weapon-image{height:102px}.weapon-name{font-size:23px}.panel{border-color:transparent}.panel.locked{border-color:#f28a37}
+.mod-box{background:#030502;border-color:#151b10}.mod-box h3{font-size:10px;color:#66705b}.mod-images img{max-width:72px}h2{font-size:14px;color:#8a957c}.lock{width:30px;height:28px;min-height:28px;padding:4px;border-color:#2d3822;background:#0a1007}.lock svg{width:18px;height:18px}
+.right-column{grid-template-rows:270px 135px 135px;gap:12px;align-content:start}.right-column .panel{background:transparent;padding:10px}.right-column .panel.locked{background:#000;padding:9px}#perks>.panel-header{height:22px}#perks>.panel-header h2{visibility:hidden}.perk-row{min-height:73px;border:0}.perk-copy{font-size:14px}.perk-icons img{width:60px;height:60px}.perk-copy small{color:#89937a}.equipment-body{height:76px}.equipment-body img{height:68px;width:68px}.equipment-name{font-size:16px}#cost-details{margin:6px 0;font:11px Menu;color:#67725a}
+footer{margin-top:auto;padding:14px 0;border-color:#343b2b;background:none;align-items:center}#generate{padding:0;border:0;background:transparent;font:17px Menu;min-height:40px;text-shadow:none}#generate kbd{font-size:11px;border-color:#566749;background:#192716}.brand{color:#c3cbbb}
+@media(min-width:1600px){.layout{grid-template-columns:185px minmax(0,1fr)}.loadout-grid{grid-template-columns:minmax(0,1.25fr) minmax(210px,1fr)}}
+@media(max-width:1050px) and (min-width:761px){.layout{grid-template-columns:150px minmax(0,1fr);gap:20px}.loadout-grid{grid-template-columns:1fr}.weapons{grid-template-rows:300px}.right-column{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}#perks{grid-column:1/-1}}
+@media(max-width:760px){#bo2-app{padding:16px 14px 0}.layout{display:block}h1{font-size:32px}#classes button{min-height:44px;font-size:17px}.toolbar{margin-top:16px;flex-direction:row;gap:12px}.toolbar fieldset{width:auto;flex:1;min-width:0}.segmented button{min-height:42px;font-size:14px}.rename-menu{margin-top:14px}.saved-note{margin-bottom:18px}.loadout-grid{display:block}.weapons{grid-template-columns:1fr;grid-template-rows:repeat(2,300px)}.right-column{display:grid;grid-template-columns:1fr;grid-template-rows:auto;gap:12px}.perk-row{min-height:76px}.right-column .panel{background:#000}footer{margin-top:20px}#generate{width:auto;text-align:left}.weapon-card{padding:10px}.panel.locked.weapon-card{padding:9px}}
+/* Fill the window; enlarge the desktop menu without changing mobile sizing. */
+#bo2-app{max-width:none;width:100%;margin:0}
+@media(min-width:1060px){
+#bo2-app{padding-right:clamp(24px,3vw,64px);padding-left:clamp(24px,3vw,64px)}
+.layout{grid-template-columns:220px minmax(0,1fr);gap:36px}
+h1{font-size:46px}#classes button{font-size:25px;min-height:41px}
+.segmented button{font-size:16px;min-height:40px}.rename-menu summary{font-size:16px}
+.loadout-grid{grid-template-columns:minmax(0,1.25fr) minmax(290px,1fr);gap:24px}
+.weapons{grid-template-rows:repeat(2,330px);gap:16px}
+.weapon-card{height:330px;grid-template-rows:28px 120px 32px 110px;gap:4px}
+.weapon-image{height:120px}.weapon-name{font-size:28px}h2{font-size:17px}
+.mod-box h3{font-size:12px}.mod-images img{max-width:88px;height:76px}.mod-images.camo img{width:76px;height:76px}
+.right-column{grid-template-rows:300px 155px 155px;gap:16px}
+.perk-row{min-height:86px}.perk-copy{font-size:17px}.perk-copy small{font-size:14px}
+.perk-icons img{width:72px;height:72px}.equipment-name{font-size:20px}.equipment-body{height:94px}.equipment-body img{width:84px;height:84px}
+.lock{width:36px;height:32px;min-height:32px}.lock svg{width:21px;height:21px}
+#generate{font-size:21px}footer .brand{font-size:20px}#points{font-size:23px}
+}
+/* Wide screens: large weapon preview with modifications in a right-hand rail. */
+@media(min-width:1060px){
+.weapon-card{grid-template-columns:minmax(0,1fr) minmax(150px,32%);grid-template-rows:32px 224px 32px;column-gap:16px;row-gap:4px}
+.weapon-card .panel-header{grid-column:1/-1;grid-row:1}
+.weapon-card .weapon-image{grid-column:1;grid-row:2;width:100%;height:224px;object-fit:contain}
+.weapon-card .weapon-name{grid-column:1;grid-row:3}
+.weapon-card .mods{grid-column:2;grid-row:2 / 4;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(2,110px);gap:12px;height:232px;align-self:center}
+.weapon-card .mod-box{height:110px;width:100%;min-width:0}
+.weapon-card .mod-images img{height:76px;max-width:88px}
+.weapon-card .mod-images.camo img{width:76px;height:76px}
+}
+/* Composition pass: shared spacing and aligned loadout columns. */
+#bo2-app{--section-gap:20px;padding-top:20px}
+header{padding-top:18px;padding-bottom:26px}.build-label{font-size:11px;letter-spacing:.6px}
+.toolbar{margin-top:24px;gap:18px}.rename-menu{margin-top:24px}.saved-note{font:12px/1.5 Menu;color:#8b967b;margin-top:12px}
+legend{font-size:12px;letter-spacing:.8px;margin-bottom:8px}
+.mod-box h3{font-size:12px;color:#8a9678;margin-bottom:6px}.mod-box{padding:8px}
+#cost-details{font:12px/1.5 Menu;color:#909b7f;margin-top:10px}#cost-details summary{min-height:28px}
+#message{line-height:1.4;min-height:20px;margin:4px 0 8px}
+.panel-header{gap:12px}.lock{flex-shrink:0}
+footer{padding-top:16px;padding-bottom:16px}#generate{letter-spacing:.5px}
+@media(min-width:1060px){
+#bo2-app{padding-left:clamp(28px,3vw,64px);padding-right:clamp(28px,3vw,64px)}
+.layout{grid-template-columns:clamp(185px,15vw,220px) minmax(0,1fr);gap:28px}
+.loadout-grid{grid-template-columns:minmax(0,1fr) clamp(280px,24vw,370px);gap:24px}
+#classes button{padding:5px 10px;min-height:42px;font-size:24px}
+.weapons{gap:20px;grid-template-rows:repeat(2,330px)}
+.weapon-card{padding:12px;grid-template-columns:minmax(0,1fr) clamp(154px,13vw,210px);grid-template-rows:32px 216px 32px;gap:6px 18px}
+.panel.locked.weapon-card{padding:11px}
+.weapon-card .weapon-image{height:216px}
+.weapon-card .mods{height:232px;gap:12px;align-self:center}
+.weapon-name{font-size:28px}
+.right-column{grid-template-rows:330px 165px 145px;gap:20px}
+.right-column .panel{padding:12px}.right-column .panel.locked{padding:11px}
+#perks>.panel-header{height:32px}#perks>.panel-header h2{visibility:visible}
+.perk-row{min-height:90px;gap:14px}.perk-copy{font-size:17px;line-height:1.4}.perk-copy small{font-size:13px;margin-bottom:2px}
+.perk-icons img{width:68px;height:68px}
+.equipment-body{height:92px;gap:14px}.equipment-body img{width:76px;height:76px}.equipment-name{font-size:19px;line-height:1.3}
+.lock{width:36px;height:34px;min-height:34px}.lock svg{width:20px;height:20px}
+}
+@media(min-width:761px) and (max-width:1059px){
+.layout{grid-template-columns:160px minmax(0,1fr);gap:22px}
+.loadout-grid{grid-template-columns:1fr}.weapons{grid-template-columns:1fr;grid-template-rows:repeat(2,300px);gap:16px}
+.weapon-card{height:300px;padding:10px;grid-template-columns:minmax(0,1fr) 148px;grid-template-rows:28px 210px 24px;gap:6px 12px}
+.weapon-card .panel-header{grid-column:1/-1;grid-row:1}.weapon-card .weapon-image{grid-column:1;grid-row:2;height:210px}.weapon-card .weapon-name{grid-column:1;grid-row:3}
+.weapon-card .mods{grid-column:2;grid-row:2/4;grid-template-columns:1fr;grid-template-rows:repeat(2,110px);gap:10px;height:230px;align-self:center}
+.right-column{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:16px}#perks{grid-column:1/-1}#perks>.panel-header h2{visibility:visible}
+}
+@media(max-width:760px){
+#bo2-app{padding:14px 16px 0}header{padding-top:16px;padding-bottom:20px}h1{font-size:34px}.build-label{font-size:9px}
+#classes{gap:8px;padding-bottom:8px}#classes button{padding:8px 10px;font-size:18px}
+.toolbar{margin-top:18px;gap:14px}.rename-menu{margin:18px 0 8px}.saved-note{margin:8px 0 18px}
+.weapons{grid-template-rows:repeat(2,320px);gap:16px}
+.weapon-card{height:320px;padding:12px;grid-template-rows:32px 112px 28px 110px;gap:6px}
+.panel.locked.weapon-card{padding:11px}.weapon-image{height:112px}.weapon-name{font-size:25px}
+.mods{gap:10px}.mod-box{height:110px}.mod-images img{height:68px}.mod-images.camo img{width:68px;height:68px}
+.right-column{margin-top:16px;gap:16px}.right-column .panel{padding:12px}.right-column .panel.locked{padding:11px}
+#perks>.panel-header{height:36px}#perks>.panel-header h2{visibility:visible}.perk-row{min-height:80px}.perk-copy{font-size:16px}.equipment-name{font-size:18px}
+.lock{width:44px;height:40px;min-height:40px}.lock svg{width:21px;height:21px}
+footer{margin-top:20px;gap:12px}#generate{font-size:19px;min-height:44px}footer .brand{font-size:17px}
+}
+@media(max-width:760px){.weapon-card{grid-template-rows:32px 104px 28px 110px}.weapon-image{height:104px}}

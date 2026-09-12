@@ -1,0 +1,1507 @@
+<iframe title="shopbysawr BO2 Class Generator" style="display:block;width:100%;height:100vh;min-height:650px;border:0;background:#0d100d" srcdoc="&lt;!doctype html&gt;&lt;html lang=&quot;en&quot;&gt;&lt;head&gt;&lt;meta charset=&quot;utf-8&quot;&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width,initial-scale=1&quot;&gt;&lt;title&gt;shopbysawr — BO2 Class Generator&lt;/title&gt;&lt;style&gt;@font-face{font-family:Menu;src:url('https://raw.githubusercontent.com/bySawR/bo2-class-generator/main/assets/menu-font.ttf')}@font-face{font-family:Text;src:url('https://raw.githubusercontent.com/bySawR/bo2-class-generator/main/assets/menu-text.ttf');font-weight:200 700}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:#0d100d;color:#e5e5da;font:16px Text,'Arial Narrow',sans-serif;background-image:repeating-linear-gradient(90deg,transparent 0 3px,#ffffff02 3px 4px)}button,input,select{font:inherit}button{cursor:pointer;color:inherit;background:#12150f;border:1px solid #424736;padding:9px 13px;min-height:44px}button:hover{border-color:#ed914e;color:#ffad70}button:focus-visible,input:focus-visible,select:focus-visible,summary:focus-visible{outline:2px solid #fb9b52;outline-offset:3px}button[aria-pressed=true]{color:#f59a54;border-color:#ea8940;background:#2e2115}#bo2-app{min-height:100dvh;padding:30px clamp(16px,4vw,64px) 0;display:flex;flex-direction:column}header{display:flex;justify-content:space-between;align-items:center;border-top:1px solid #393e30;padding:22px 0 25px}.eyebrow{font:12px Menu,sans-serif;color:#979c8b;letter-spacing:2px;margin:0 0 8px}h1{font:clamp(30px,4vw,52px)/1 Menu,sans-serif;margin:0}.brand{font-size:18px}.layout{display:grid;grid-template-columns:210px minmax(0,1fr);gap:32px;flex:1}aside{min-width:0}#classes{display:flex;flex-direction:column;gap:4px}#classes button{border-color:transparent;background:transparent;text-align:left;font-size:22px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}#classes button[aria-pressed=true]{border-left:3px solid #ef9148;color:#ef9148;background:#ed91490b}#rename-form{margin-top:24px}label,legend{font:12px Menu;color:#a4ab95;letter-spacing:1px}.rename-row{display:flex;margin-top:7px;gap:5px}input{min-width:0;width:100%;background:#030503;border:1px solid #404735;color:#ececde;padding:8px}#rename-form button{font-size:13px;padding:6px 10px}.saved-note{color:#939e84;font-size:12px;line-height:1.5}.loadout{min-width:0}.toolbar{display:flex;align-items:flex-end;flex-wrap:wrap;gap:12px;justify-content:space-between}fieldset{margin:0;padding:0;border:0}legend{margin-bottom:6px}.segmented{display:flex;gap:0}.segmented button{font-size:14px;padding:8px 14px}#generate{background:#d9752d;border:1px solid #ffa767;color:#0c0d09;font-family:Menu;font-size:19px;letter-spacing:.4px}kbd{font:11px Menu;padding:3px;border:1px solid #6e391c;margin-left:9px}.allocation{display:flex;align-items:center;gap:12px;margin-top:17px}#point-bars{display:flex;gap:4px;flex:1}#point-bars i{height:6px;flex:1;background:#363a2b}#point-bars i.used{background:linear-gradient(#ffb577,#d46c27)}#points{font:23px Menu;color:#ec9859;min-width:48px;text-align:right}#message{min-height:21px;font-size:13px;color:#f9b783;margin:6px 0 10px}.loadout-grid{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(250px,1fr);gap:16px}.weapons{display:grid;grid-template-rows:repeat(2,350px);gap:16px}.panel{border:1px solid #3c4230;background:#000;position:relative;min-width:0}.panel.locked{border:2px solid #f28a37;box-shadow:0 0 0 1px #f28a3733}.weapon-card{height:350px;padding:14px;display:grid;grid-template-rows:32px 128px 36px 110px;gap:4px}.panel.locked.weapon-card{padding:13px}.panel-header{display:flex;align-items:center;justify-content:space-between;gap:6px}h2{font:16px Menu;color:#a1aa91;letter-spacing:.7px;margin:0}.lock{height:32px;min-height:32px;width:36px;padding:5px;display:grid;place-items:center;flex-shrink:0}.lock svg{width:20px;height:20px}.weapon-image{width:100%;height:128px;object-fit:contain}.weapon-name{font:24px Menu;margin:0;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;align-self:center}.mods{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;height:110px}.mod-box{height:110px;min-width:0;overflow:hidden;background:#0a0d08;border:1px solid #323a27;display:flex;flex-direction:column;padding:7px}.mod-box h3{font:12px Menu;letter-spacing:.7px;color:#9fa98b;margin:0 0 6px}.mod-images{display:flex;align-items:center;justify-content:center;gap:5px;flex:1;min-height:0;overflow:hidden}.mod-images img{width:calc((100% - 10px)/3);max-width:76px;height:70px;object-fit:contain;min-width:0}.mod-images.camo img{width:70px;height:70px;object-fit:cover}.empty{color:#737d64;font-size:13px}.right-column{display:grid;grid-template-rows:1.5fr 1fr 1fr;gap:16px}.right-column .panel{padding:14px}.right-column .panel.locked{padding:13px}.perk-row{display:flex;align-items:center;justify-content:space-between;gap:8px;border-bottom:1px solid #292f20;min-height:68px}.perk-row:last-child{border-bottom:0}.perk-copy{font-size:14px;line-height:1.4}.perk-copy small{display:block;font:12px Menu;color:#929d7e}.perk-icons{display:flex;flex-shrink:0}.perk-icons img{width:54px;height:54px;object-fit:contain}.equipment-body{display:flex;align-items:center;justify-content:space-between;gap:12px;height:88px}.equipment-body img{height:76px;width:76px;object-fit:contain}.equipment-name{font-size:17px}.equipment select{width:100%;background:#0e130a;color:#cfdbc0;border:1px solid #39462d;padding:8px;min-height:42px;font-size:13px}.cost-note{color:#9ca88b;font-size:12px}details{margin:12px 0 20px;font-size:12px;color:#aab39b}summary{cursor:pointer;width:fit-content;min-height:24px}footer{border-top:1px solid #3e4532;margin-top:26px;display:flex;justify-content:space-between;padding:18px 0;color:#919c7f;font:13px Menu}.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0)}
+@media(min-width:1600px){.layout{grid-template-columns:250px minmax(0,1fr)}.loadout-grid{grid-template-columns:1.45fr 1fr}.mod-images img{max-width:86px}}
+@media(max-width:1050px){.layout{grid-template-columns:160px minmax(0,1fr);gap:20px}.loadout-grid{grid-template-columns:1fr}.right-column{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}#perks{grid-column:1/-1}.perk-row{min-height:60px}.weapons{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:350px}.weapon-card{padding:10px}.panel.locked.weapon-card{padding:9px}.mods{gap:6px}.mod-box{padding:5px}.mod-images{gap:1px}.mod-images img{width:33%;height:58px}.mod-images.camo img{width:58px;height:58px}}
+@media(max-width:760px){#bo2-app{padding:16px 14px 0}header{padding:16px 0 22px}.layout{display:block}#classes{flex-direction:row;overflow-x:auto;padding-bottom:8px;gap:6px}#classes button{font-size:17px;min-width:105px;max-width:170px;border:1px solid #323a28}#rename-form{margin:12px 0 0;max-width:400px}.saved-note{margin:8px 0 20px}.toolbar{justify-content:flex-start}.toolbar fieldset{flex:1}.segmented button{flex:1;padding:8px 10px}#generate{width:100%}.loadout-grid{display:block}.weapons{display:grid;grid-template-columns:1fr;grid-template-rows:repeat(2,350px)}.weapon-card{padding:14px}.panel.locked.weapon-card{padding:13px}.mod-box{padding:7px}.mod-images img{width:calc((100% - 10px)/3);height:70px}.mod-images.camo img{width:70px;height:70px}.right-column{margin-top:16px;display:grid;grid-template-columns:1fr;gap:16px}#perks{grid-column:auto}.perk-row{min-height:76px}.perk-icons img{width:62px;height:62px}.equipment-body{height:88px}footer .brand{font:17px Text}header .brand{font-size:15px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+/* Names stay visually consistent in the footer. */
+footer .brand{font:17px Text,sans-serif}
+@media(max-width:760px){.segmented button{white-space:nowrap;font-size:13px;padding:8px}.toolbar fieldset{min-width:140px}#classes button{flex-shrink:0}.mod-images img{touch-action:manipulation}}
+/* BO2 menu treatment: near-black texture, quiet framing, orange selection. */
+body{background-color:#080909;background-image:radial-gradient(ellipse at 38% 45%,#48372512,transparent 48%),radial-gradient(ellipse at 75% 30%,#31353014,transparent 55%),repeating-linear-gradient(90deg,transparent 0 2px,#b9b4a006 2px 3px),linear-gradient(180deg,#070808,#111310 48%,#060807);background-attachment:fixed;color:#deded5}
+#bo2-app{background:linear-gradient(180deg,#0005,transparent 22%,transparent 78%,#0006)}
+header{border-color:#3a3d34}h1{text-shadow:0 2px 3px #000}
+.eyebrow{color:#74796e}.saved-note{color:#767e6e}
+.panel{background:#000;border-color:#20251b}
+.mod-box{background:#030502;border-color:#1e2419}
+.mod-box h3,h2,.perk-copy small,label,legend{color:#919987}
+.perk-row{border-color:#1c2117}
+#classes button[aria-pressed=true]{background:transparent;border-color:transparent;border-left-color:#ef9148;text-shadow:0 0 8px #d4702c33}
+button{background:#090c08;border-color:#343c2a}
+.segmented button{background:#060806;border-color:#292e23;color:#aab19f}
+.segmented button[aria-pressed=true]{background:linear-gradient(0deg,#c46b2219,transparent);border-color:#353829;border-bottom:2px solid #ec8b42;color:#f2a66a}
+#generate{background:linear-gradient(#171b12,#080b06);border-color:#5a634a;color:#e6e9da;text-shadow:0 1px 2px #000}
+#generate:hover{border-color:#ed914e;color:#ffad70}
+kbd{background:#172417;border-color:#647053;color:#c9d0bb}
+input,.equipment select{background:#040603;border-color:#2a3321;color:#c3cdb6}
+.lock{background:#080c06;border-color:#343d2a;color:#8f9e7b}
+.panel.locked{border-color:#f28a37;box-shadow:0 0 0 1px #f28a3726}
+.lock[aria-pressed=true]{background:#352111;border-color:#ee8c42;color:#ffac69}
+#point-bars i{background:#282c22}#point-bars i.used{background:linear-gradient(#ffb675,#d06b2b);box-shadow:0 1px 0 #050604}
+footer{border-color:#343b2b;background:linear-gradient(transparent,#0005);color:#7f8b70}
+@media(max-width:760px){#classes button{background:#050704;border-color:#252d1e}#classes button[aria-pressed=true]{border-color:#434930;border-left-color:#ef9148}}
+/* Compact Create-a-Class composition. Settings stay beside the class list. */
+#bo2-app{max-width:1120px;margin:0 auto;padding-top:22px;background:none}
+header{padding:18px 0 22px}h1{font-size:38px}.build-label{font:10px Menu;color:#8d9580}.layout{grid-template-columns:185px minmax(0,1fr);gap:30px;flex:none}
+#classes{gap:0}#classes button{min-height:34px;padding:3px 8px;font-size:21px;border-left:2px solid transparent}
+.toolbar{margin-top:28px;display:flex;flex-direction:column;align-items:stretch;gap:15px}.toolbar fieldset{width:100%}.segmented button{font:14px Menu;flex:1;padding:6px;min-height:34px;border-color:#22281c}.segmented button[aria-pressed=true]{border-color:transparent;border-bottom-color:#dd8037;background:transparent}
+legend{font-size:11px;color:#77816b}.rename-menu{margin:22px 0 8px}.rename-menu summary{font:14px Menu;color:#a1aa8e}#rename-form{margin-top:10px}.saved-note{font:11px Menu;color:#65715a}
+.allocation{margin-top:4px;position:relative;padding-top:20px}#points{position:absolute;right:0;top:-5px;font-size:19px}#point-bars{gap:4px}#point-bars i{height:5px}
+#message{margin:3px 0;min-height:17px;font-size:12px}.loadout-grid{grid-template-columns:minmax(0,1.25fr) minmax(210px,1fr);gap:20px}.weapons{grid-template-rows:repeat(2,300px);gap:12px}
+.weapon-card{height:300px;grid-template-rows:24px 102px 24px 110px;padding:10px;gap:4px}.panel.locked.weapon-card{padding:9px}.weapon-image{height:102px}.weapon-name{font-size:23px}.panel{border-color:transparent}.panel.locked{border-color:#f28a37}
+.mod-box{background:#030502;border-color:#151b10}.mod-box h3{font-size:10px;color:#66705b}.mod-images img{max-width:72px}h2{font-size:14px;color:#8a957c}.lock{width:30px;height:28px;min-height:28px;padding:4px;border-color:#2d3822;background:#0a1007}.lock svg{width:18px;height:18px}
+.right-column{grid-template-rows:270px 135px 135px;gap:12px;align-content:start}.right-column .panel{background:transparent;padding:10px}.right-column .panel.locked{background:#000;padding:9px}#perks&gt;.panel-header{height:22px}#perks&gt;.panel-header h2{visibility:hidden}.perk-row{min-height:73px;border:0}.perk-copy{font-size:14px}.perk-icons img{width:60px;height:60px}.perk-copy small{color:#89937a}.equipment-body{height:76px}.equipment-body img{height:68px;width:68px}.equipment-name{font-size:16px}#cost-details{margin:6px 0;font:11px Menu;color:#67725a}
+footer{margin-top:auto;padding:14px 0;border-color:#343b2b;background:none;align-items:center}#generate{padding:0;border:0;background:transparent;font:17px Menu;min-height:40px;text-shadow:none}#generate kbd{font-size:11px;border-color:#566749;background:#192716}.brand{color:#c3cbbb}
+@media(min-width:1600px){.layout{grid-template-columns:185px minmax(0,1fr)}.loadout-grid{grid-template-columns:minmax(0,1.25fr) minmax(210px,1fr)}}
+@media(max-width:1050px) and (min-width:761px){.layout{grid-template-columns:150px minmax(0,1fr);gap:20px}.loadout-grid{grid-template-columns:1fr}.weapons{grid-template-rows:300px}.right-column{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto}#perks{grid-column:1/-1}}
+@media(max-width:760px){#bo2-app{padding:16px 14px 0}.layout{display:block}h1{font-size:32px}#classes button{min-height:44px;font-size:17px}.toolbar{margin-top:16px;flex-direction:row;gap:12px}.toolbar fieldset{width:auto;flex:1;min-width:0}.segmented button{min-height:42px;font-size:14px}.rename-menu{margin-top:14px}.saved-note{margin-bottom:18px}.loadout-grid{display:block}.weapons{grid-template-columns:1fr;grid-template-rows:repeat(2,300px)}.right-column{display:grid;grid-template-columns:1fr;grid-template-rows:auto;gap:12px}.perk-row{min-height:76px}.right-column .panel{background:#000}footer{margin-top:20px}#generate{width:auto;text-align:left}.weapon-card{padding:10px}.panel.locked.weapon-card{padding:9px}}
+/* Fill the window; enlarge the desktop menu without changing mobile sizing. */
+#bo2-app{max-width:none;width:100%;margin:0}
+@media(min-width:1060px){
+#bo2-app{padding-right:clamp(24px,3vw,64px);padding-left:clamp(24px,3vw,64px)}
+.layout{grid-template-columns:220px minmax(0,1fr);gap:36px}
+h1{font-size:46px}#classes button{font-size:25px;min-height:41px}
+.segmented button{font-size:16px;min-height:40px}.rename-menu summary{font-size:16px}
+.loadout-grid{grid-template-columns:minmax(0,1.25fr) minmax(290px,1fr);gap:24px}
+.weapons{grid-template-rows:repeat(2,330px);gap:16px}
+.weapon-card{height:330px;grid-template-rows:28px 120px 32px 110px;gap:4px}
+.weapon-image{height:120px}.weapon-name{font-size:28px}h2{font-size:17px}
+.mod-box h3{font-size:12px}.mod-images img{max-width:88px;height:76px}.mod-images.camo img{width:76px;height:76px}
+.right-column{grid-template-rows:300px 155px 155px;gap:16px}
+.perk-row{min-height:86px}.perk-copy{font-size:17px}.perk-copy small{font-size:14px}
+.perk-icons img{width:72px;height:72px}.equipment-name{font-size:20px}.equipment-body{height:94px}.equipment-body img{width:84px;height:84px}
+.lock{width:36px;height:32px;min-height:32px}.lock svg{width:21px;height:21px}
+#generate{font-size:21px}footer .brand{font-size:20px}#points{font-size:23px}
+}
+/* Wide screens: large weapon preview with modifications in a right-hand rail. */
+@media(min-width:1060px){
+.weapon-card{grid-template-columns:minmax(0,1fr) minmax(150px,32%);grid-template-rows:32px 224px 32px;column-gap:16px;row-gap:4px}
+.weapon-card .panel-header{grid-column:1/-1;grid-row:1}
+.weapon-card .weapon-image{grid-column:1;grid-row:2;width:100%;height:224px;object-fit:contain}
+.weapon-card .weapon-name{grid-column:1;grid-row:3}
+.weapon-card .mods{grid-column:2;grid-row:2 / 4;display:grid;grid-template-columns:1fr;grid-template-rows:repeat(2,110px);gap:12px;height:232px;align-self:center}
+.weapon-card .mod-box{height:110px;width:100%;min-width:0}
+.weapon-card .mod-images img{height:76px;max-width:88px}
+.weapon-card .mod-images.camo img{width:76px;height:76px}
+}
+/* Composition pass: shared spacing and aligned loadout columns. */
+#bo2-app{--section-gap:20px;padding-top:20px}
+header{padding-top:18px;padding-bottom:26px}.build-label{font-size:11px;letter-spacing:.6px}
+.toolbar{margin-top:24px;gap:18px}.rename-menu{margin-top:24px}.saved-note{font:12px/1.5 Menu;color:#8b967b;margin-top:12px}
+legend{font-size:12px;letter-spacing:.8px;margin-bottom:8px}
+.mod-box h3{font-size:12px;color:#8a9678;margin-bottom:6px}.mod-box{padding:8px}
+#cost-details{font:12px/1.5 Menu;color:#909b7f;margin-top:10px}#cost-details summary{min-height:28px}
+#message{line-height:1.4;min-height:20px;margin:4px 0 8px}
+.panel-header{gap:12px}.lock{flex-shrink:0}
+footer{padding-top:16px;padding-bottom:16px}#generate{letter-spacing:.5px}
+@media(min-width:1060px){
+#bo2-app{padding-left:clamp(28px,3vw,64px);padding-right:clamp(28px,3vw,64px)}
+.layout{grid-template-columns:clamp(185px,15vw,220px) minmax(0,1fr);gap:28px}
+.loadout-grid{grid-template-columns:minmax(0,1fr) clamp(280px,24vw,370px);gap:24px}
+#classes button{padding:5px 10px;min-height:42px;font-size:24px}
+.weapons{gap:20px;grid-template-rows:repeat(2,330px)}
+.weapon-card{padding:12px;grid-template-columns:minmax(0,1fr) clamp(154px,13vw,210px);grid-template-rows:32px 216px 32px;gap:6px 18px}
+.panel.locked.weapon-card{padding:11px}
+.weapon-card .weapon-image{height:216px}
+.weapon-card .mods{height:232px;gap:12px;align-self:center}
+.weapon-name{font-size:28px}
+.right-column{grid-template-rows:330px 165px 145px;gap:20px}
+.right-column .panel{padding:12px}.right-column .panel.locked{padding:11px}
+#perks&gt;.panel-header{height:32px}#perks&gt;.panel-header h2{visibility:visible}
+.perk-row{min-height:90px;gap:14px}.perk-copy{font-size:17px;line-height:1.4}.perk-copy small{font-size:13px;margin-bottom:2px}
+.perk-icons img{width:68px;height:68px}
+.equipment-body{height:92px;gap:14px}.equipment-body img{width:76px;height:76px}.equipment-name{font-size:19px;line-height:1.3}
+.lock{width:36px;height:34px;min-height:34px}.lock svg{width:20px;height:20px}
+}
+@media(min-width:761px) and (max-width:1059px){
+.layout{grid-template-columns:160px minmax(0,1fr);gap:22px}
+.loadout-grid{grid-template-columns:1fr}.weapons{grid-template-columns:1fr;grid-template-rows:repeat(2,300px);gap:16px}
+.weapon-card{height:300px;padding:10px;grid-template-columns:minmax(0,1fr) 148px;grid-template-rows:28px 210px 24px;gap:6px 12px}
+.weapon-card .panel-header{grid-column:1/-1;grid-row:1}.weapon-card .weapon-image{grid-column:1;grid-row:2;height:210px}.weapon-card .weapon-name{grid-column:1;grid-row:3}
+.weapon-card .mods{grid-column:2;grid-row:2/4;grid-template-columns:1fr;grid-template-rows:repeat(2,110px);gap:10px;height:230px;align-self:center}
+.right-column{grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;gap:16px}#perks{grid-column:1/-1}#perks&gt;.panel-header h2{visibility:visible}
+}
+@media(max-width:760px){
+#bo2-app{padding:14px 16px 0}header{padding-top:16px;padding-bottom:20px}h1{font-size:34px}.build-label{font-size:9px}
+#classes{gap:8px;padding-bottom:8px}#classes button{padding:8px 10px;font-size:18px}
+.toolbar{margin-top:18px;gap:14px}.rename-menu{margin:18px 0 8px}.saved-note{margin:8px 0 18px}
+.weapons{grid-template-rows:repeat(2,320px);gap:16px}
+.weapon-card{height:320px;padding:12px;grid-template-rows:32px 112px 28px 110px;gap:6px}
+.panel.locked.weapon-card{padding:11px}.weapon-image{height:112px}.weapon-name{font-size:25px}
+.mods{gap:10px}.mod-box{height:110px}.mod-images img{height:68px}.mod-images.camo img{width:68px;height:68px}
+.right-column{margin-top:16px;gap:16px}.right-column .panel{padding:12px}.right-column .panel.locked{padding:11px}
+#perks&gt;.panel-header{height:36px}#perks&gt;.panel-header h2{visibility:visible}.perk-row{min-height:80px}.perk-copy{font-size:16px}.equipment-name{font-size:18px}
+.lock{width:44px;height:40px;min-height:40px}.lock svg{width:21px;height:21px}
+footer{margin-top:20px;gap:12px}#generate{font-size:19px;min-height:44px}footer .brand{font-size:17px}
+}
+@media(max-width:760px){.weapon-card{grid-template-rows:32px 104px 28px 110px}.weapon-image{height:104px}}
+ #bo2-app{min-height:0}&lt;/style&gt;&lt;/head&gt;&lt;body&gt;&lt;main id=&quot;bo2-app&quot;&gt;&lt;header&gt;&lt;div&gt;&lt;h1&gt;CHOOSE CLASS&lt;/h1&gt;&lt;/div&gt;&lt;span class=&quot;build-label&quot;&gt;BO2 CLASS GENERATOR&lt;/span&gt;&lt;/header&gt;&lt;div class=&quot;layout&quot;&gt;&lt;aside&gt;&lt;nav id=&quot;classes&quot; aria-label=&quot;Saved classes&quot;&gt;&lt;/nav&gt;&lt;div class=&quot;toolbar&quot;&gt;&lt;fieldset&gt;&lt;legend&gt;WEAPONS&lt;/legend&gt;&lt;div class=&quot;segmented&quot;&gt;&lt;button type=&quot;button&quot; data-mode=&quot;trickshot&quot;&gt;Trickshot&lt;/button&gt;&lt;button type=&quot;button&quot; data-mode=&quot;regular&quot;&gt;Regular Guns&lt;/button&gt;&lt;/div&gt;&lt;/fieldset&gt;&lt;fieldset&gt;&lt;legend&gt;CLASS LIMIT&lt;/legend&gt;&lt;div class=&quot;segmented&quot;&gt;&lt;button type=&quot;button&quot; data-limit=&quot;10&quot;&gt;10 slots&lt;/button&gt;&lt;button type=&quot;button&quot; data-limit=&quot;17&quot;&gt;17 slots&lt;/button&gt;&lt;/div&gt;&lt;/fieldset&gt;&lt;/div&gt;&lt;details class=&quot;rename-menu&quot;&gt;&lt;summary&gt;Rename class&lt;/summary&gt;&lt;form id=&quot;rename-form&quot;&gt;&lt;label for=&quot;class-name&quot;&gt;CLASS NAME&lt;/label&gt;&lt;div class=&quot;rename-row&quot;&gt;&lt;input id=&quot;class-name&quot; maxlength=&quot;28&quot; autocomplete=&quot;off&quot;&gt;&lt;button type=&quot;submit&quot;&gt;Save&lt;/button&gt;&lt;/div&gt;&lt;/form&gt;&lt;/details&gt;&lt;p class=&quot;saved-note&quot; id=&quot;save-note&quot;&gt;Classes saved on this device&lt;/p&gt;&lt;/aside&gt;&lt;section class=&quot;loadout&quot;&gt;&lt;div class=&quot;allocation&quot;&gt;&lt;div id=&quot;point-bars&quot;&gt;&lt;/div&gt;&lt;strong id=&quot;points&quot;&gt;&lt;/strong&gt;&lt;/div&gt;&lt;p id=&quot;message&quot; role=&quot;status&quot; aria-live=&quot;polite&quot;&gt;&lt;/p&gt;&lt;div class=&quot;loadout-grid&quot;&gt;&lt;div class=&quot;weapons&quot; id=&quot;weapons&quot;&gt;&lt;/div&gt;&lt;div class=&quot;right-column&quot;&gt;&lt;section id=&quot;perks&quot; class=&quot;panel&quot;&gt;&lt;/section&gt;&lt;section id=&quot;lethal&quot; class=&quot;panel equipment&quot;&gt;&lt;/section&gt;&lt;section id=&quot;tactical&quot; class=&quot;panel equipment&quot;&gt;&lt;/section&gt;&lt;/div&gt;&lt;/div&gt;&lt;details id=&quot;cost-details&quot;&gt;&lt;summary&gt;Point breakdown&lt;/summary&gt;&lt;p id=&quot;cost-info&quot;&gt;&lt;/p&gt;&lt;/details&gt;&lt;/section&gt;&lt;/div&gt;&lt;footer&gt;&lt;button type=&quot;button&quot; id=&quot;generate&quot;&gt;Generate Class &lt;kbd&gt;SPACE&lt;/kbd&gt;&lt;/button&gt;&lt;span class=&quot;brand&quot;&gt;shopbysawr&lt;/span&gt;&lt;/footer&gt;&lt;/main&gt;&lt;script&gt;globalThis.BO2_ASSET_BASE=&quot;https://raw.githubusercontent.com/bySawR/bo2-class-generator/main/&quot;;&lt;/script&gt;&lt;script&gt;globalThis.BO2_DATA = {
+  &quot;weapons&quot;: [
+    {
+      &quot;id&quot;: &quot;mtar&quot;,
+      &quot;name&quot;: &quot;MTAR&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_tar21_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;type_25&quot;,
+      &quot;name&quot;: &quot;Type 25&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_type95_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;swat_556&quot;,
+      &quot;name&quot;: &quot;SWAT-556&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_sig556_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;fal_osw&quot;,
+      &quot;name&quot;: &quot;FAL OSW&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_sa58_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;m27&quot;,
+      &quot;name&quot;: &quot;M27&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_hk416_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;scar_h&quot;,
+      &quot;name&quot;: &quot;SCAR-H&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_scar_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;smr&quot;,
+      &quot;name&quot;: &quot;SMR&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_saritch_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;an_94&quot;,
+      &quot;name&quot;: &quot;AN-94&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_an94_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;mp7&quot;,
+      &quot;name&quot;: &quot;MP7&quot;,
+      &quot;category&quot;: &quot;smg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_mp7_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;pdw_57&quot;,
+      &quot;name&quot;: &quot;PDW-57&quot;,
+      &quot;category&quot;: &quot;smg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_ar57_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;vector_k10&quot;,
+      &quot;name&quot;: &quot;Vector K10&quot;,
+      &quot;category&quot;: &quot;smg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_kriss_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;msmc&quot;,
+      &quot;name&quot;: &quot;MSMC&quot;,
+      &quot;category&quot;: &quot;smg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_insas_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;chicom_cqb&quot;,
+      &quot;name&quot;: &quot;Chicom CQB&quot;,
+      &quot;category&quot;: &quot;smg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_qcw_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;skorpion_evo&quot;,
+      &quot;name&quot;: &quot;Skorpion EVO&quot;,
+      &quot;category&quot;: &quot;smg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_evoskorpion_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;peacekeeper&quot;,
+      &quot;name&quot;: &quot;Peacekeeper&quot;,
+      &quot;category&quot;: &quot;smg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_pm_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;dsr_50&quot;,
+      &quot;name&quot;: &quot;DSR 50&quot;,
+      &quot;category&quot;: &quot;sniper&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_dsr1_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;acog&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;cpu&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;ballista&quot;,
+      &quot;name&quot;: &quot;Ballista&quot;,
+      &quot;category&quot;: &quot;sniper&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_ballista_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;acog&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;cpu&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;irons&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;xpr_50&quot;,
+      &quot;name&quot;: &quot;XPR-50&quot;,
+      &quot;category&quot;: &quot;sniper&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_as50_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;acog&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;cpu&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;svu_as&quot;,
+      &quot;name&quot;: &quot;SVU-AS&quot;,
+      &quot;category&quot;: &quot;sniper&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_svu_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;acog&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;cpu&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;qbb_lsw&quot;,
+      &quot;name&quot;: &quot;QBB LSW&quot;,
+      &quot;category&quot;: &quot;lmg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_qbb95_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;lsat&quot;,
+      &quot;name&quot;: &quot;LSAT&quot;,
+      &quot;category&quot;: &quot;lmg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_lsat_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;hamr&quot;,
+      &quot;name&quot;: &quot;HAMR&quot;,
+      &quot;category&quot;: &quot;lmg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_hamr_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;mk48&quot;,
+      &quot;name&quot;: &quot;Mk 48&quot;,
+      &quot;category&quot;: &quot;lmg&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_mk48_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;rapidfire&quot;,
+        &quot;grip&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;remington_870_mcs&quot;,
+      &quot;name&quot;: &quot;Remington 870 MCS&quot;,
+      &quot;category&quot;: &quot;shotgun&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_870mcs_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;laser&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;s12&quot;,
+      &quot;name&quot;: &quot;S12&quot;,
+      &quot;category&quot;: &quot;shotgun&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_saiga12_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;laser&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;ksg&quot;,
+      &quot;name&quot;: &quot;KSG&quot;,
+      &quot;category&quot;: &quot;shotgun&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_ksg_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;laser&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;m1216&quot;,
+      &quot;name&quot;: &quot;M1216&quot;,
+      &quot;category&quot;: &quot;shotgun&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_srm_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;quickdraw&quot;,
+        &quot;laser&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;assault_shield&quot;,
+      &quot;name&quot;: &quot;Assault Shield&quot;,
+      &quot;category&quot;: &quot;special&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_riot_big.png&quot;,
+      &quot;attachments&quot;: []
+    },
+    {
+      &quot;id&quot;: &quot;five_seven&quot;,
+      &quot;name&quot;: &quot;Five-Seven&quot;,
+      &quot;category&quot;: &quot;pistol&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_five_seven_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;knife&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;dualwield&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;tac_45&quot;,
+      &quot;name&quot;: &quot;TAC-45&quot;,
+      &quot;category&quot;: &quot;pistol&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_fnp45_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;knife&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;dualwield&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;b23r&quot;,
+      &quot;name&quot;: &quot;B23R&quot;,
+      &quot;category&quot;: &quot;pistol&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_baretta93r_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;knife&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;dualwield&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;executioner&quot;,
+      &quot;name&quot;: &quot;Executioner&quot;,
+      &quot;category&quot;: &quot;pistol&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_judge_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;laser&quot;,
+        &quot;knife&quot;,
+        &quot;fastmag&quot;,
+        &quot;dualwield&quot;,
+        &quot;fmj&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;kap_40&quot;,
+      &quot;name&quot;: &quot;KAP-40&quot;,
+      &quot;category&quot;: &quot;pistol&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_kard_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;suppressor&quot;,
+        &quot;longbarrel&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;knife&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;dualwield&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;smaw&quot;,
+      &quot;name&quot;: &quot;SMAW&quot;,
+      &quot;category&quot;: &quot;launcher&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_smaw_big.png&quot;,
+      &quot;attachments&quot;: []
+    },
+    {
+      &quot;id&quot;: &quot;fhj_18_aa&quot;,
+      &quot;name&quot;: &quot;FHJ-18 AA&quot;,
+      &quot;category&quot;: &quot;launcher&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_fhj_big.png&quot;,
+      &quot;attachments&quot;: []
+    },
+    {
+      &quot;id&quot;: &quot;rpg&quot;,
+      &quot;name&quot;: &quot;RPG&quot;,
+      &quot;category&quot;: &quot;launcher&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_rpg_big.png&quot;,
+      &quot;attachments&quot;: []
+    },
+    {
+      &quot;id&quot;: &quot;crossbow&quot;,
+      &quot;name&quot;: &quot;Crossbow&quot;,
+      &quot;category&quot;: &quot;special&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_crossbow_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;acog&quot;,
+        &quot;dualband&quot;,
+        &quot;zoom&quot;,
+        &quot;tribolt&quot;
+      ]
+    },
+    {
+      &quot;id&quot;: &quot;ballistic_knife&quot;,
+      &quot;name&quot;: &quot;Ballistic Knife&quot;,
+      &quot;category&quot;: &quot;special&quot;,
+      &quot;primary&quot;: false,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_ballistic_knife_big.png&quot;,
+      &quot;attachments&quot;: []
+    },
+    {
+      &quot;id&quot;: &quot;m8a1&quot;,
+      &quot;name&quot;: &quot;M8A1&quot;,
+      &quot;category&quot;: &quot;assault_rifle&quot;,
+      &quot;primary&quot;: true,
+      &quot;image&quot;: &quot;assets/native/menu_mp_weapons_xm8_big.png&quot;,
+      &quot;attachments&quot;: [
+        &quot;reflex&quot;,
+        &quot;eotech&quot;,
+        &quot;hybrid&quot;,
+        &quot;acog&quot;,
+        &quot;target&quot;,
+        &quot;mms&quot;,
+        &quot;suppressor&quot;,
+        &quot;quickdraw&quot;,
+        &quot;fmj&quot;,
+        &quot;laser&quot;,
+        &quot;selectfire&quot;,
+        &quot;grip&quot;,
+        &quot;gl&quot;,
+        &quot;fastmag&quot;,
+        &quot;extended&quot;,
+        &quot;stock&quot;
+      ]
+    }
+  ],
+  &quot;attachments&quot;: [
+    {
+      &quot;id&quot;: &quot;reflex&quot;,
+      &quot;name&quot;: &quot;Reflex Sight&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_red_dot.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;eotech&quot;,
+      &quot;name&quot;: &quot;EOTech Sight&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_holographic.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;hybrid&quot;,
+      &quot;name&quot;: &quot;Hybrid Optic&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_combo_r_a.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;acog&quot;,
+      &quot;name&quot;: &quot;ACOG&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_acog.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;target&quot;,
+      &quot;name&quot;: &quot;Target Finder&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_rangefinder.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;mms&quot;,
+      &quot;name&quot;: &quot;MMS&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_mms.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;dualband&quot;,
+      &quot;name&quot;: &quot;Dual Band&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_dual_band.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;zoom&quot;,
+      &quot;name&quot;: &quot;Variable Zoom&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_var_zoom.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;suppressor&quot;,
+      &quot;name&quot;: &quot;Suppressor&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_suppressor.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;longbarrel&quot;,
+      &quot;name&quot;: &quot;Long Barrel&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_barrel_extend.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;quickdraw&quot;,
+      &quot;name&quot;: &quot;Quickdraw&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_pistol_grip.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;fmj&quot;,
+      &quot;name&quot;: &quot;FMJ&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_fmj.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;laser&quot;,
+      &quot;name&quot;: &quot;Laser Sight&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_laser.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;selectfire&quot;,
+      &quot;name&quot;: &quot;Select Fire&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_trigger_group.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;rapidfire&quot;,
+      &quot;name&quot;: &quot;Rapid Fire&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_rapid_fire.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;cpu&quot;,
+      &quot;name&quot;: &quot;Ballistics CPU&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_ballistics_cpu.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;tribolt&quot;,
+      &quot;name&quot;: &quot;Tri-Bolt&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_tribolt.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;grip&quot;,
+      &quot;name&quot;: &quot;Fore Grip&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_foregrip.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;knife&quot;,
+      &quot;name&quot;: &quot;Tactical Knife&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_tact_knife.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;fastmag&quot;,
+      &quot;name&quot;: &quot;Fast Mag&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_dual_clip.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;extended&quot;,
+      &quot;name&quot;: &quot;Extended Clip&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_extended_mag.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;stock&quot;,
+      &quot;name&quot;: &quot;Stock&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_extended_stock.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;dualwield&quot;,
+      &quot;name&quot;: &quot;Dual Wield&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_dual_wield.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;irons&quot;,
+      &quot;name&quot;: &quot;Iron Sights&quot;,
+      &quot;image&quot;: &quot;assets/native/cac_mods_ironsight.png&quot;
+    },
+    {
+      &quot;id&quot;: &quot;gl&quot;,
+      &quot;name&quot;: &quot;Grenade Launcher&quot;,
+      &quot;image&quot;: &quot;assets/grenade-launcher.png&quot;
+    }
+  ],
+  &quot;perks&quot;: [
+    [
+      {
+        &quot;id&quot;: &quot;lightweight&quot;,
+        &quot;name&quot;: &quot;Lightweight&quot;,
+        &quot;tier&quot;: 0,
+        &quot;image&quot;: &quot;assets/native/perk_lightweight_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;flak_jacket&quot;,
+        &quot;name&quot;: &quot;Flak Jacket&quot;,
+        &quot;tier&quot;: 0,
+        &quot;image&quot;: &quot;assets/native/perk_flak_jacket_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;hardline&quot;,
+        &quot;name&quot;: &quot;Hardline&quot;,
+        &quot;tier&quot;: 0,
+        &quot;image&quot;: &quot;assets/native/perk_hardline_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;blind_eye&quot;,
+        &quot;name&quot;: &quot;Blind Eye&quot;,
+        &quot;tier&quot;: 0,
+        &quot;image&quot;: &quot;assets/native/perk_blind_eye_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;ghost&quot;,
+        &quot;name&quot;: &quot;Ghost&quot;,
+        &quot;tier&quot;: 0,
+        &quot;image&quot;: &quot;assets/native/perk_ghost_256.png&quot;
+      }
+    ],
+    [
+      {
+        &quot;id&quot;: &quot;warrior&quot;,
+        &quot;name&quot;: &quot;Toughness&quot;,
+        &quot;tier&quot;: 1,
+        &quot;image&quot;: &quot;assets/native/perk_warrior_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;fast_hands&quot;,
+        &quot;name&quot;: &quot;Fast Hands&quot;,
+        &quot;tier&quot;: 1,
+        &quot;image&quot;: &quot;assets/native/perk_fast_hands_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;cold_blooded&quot;,
+        &quot;name&quot;: &quot;Cold Blooded&quot;,
+        &quot;tier&quot;: 1,
+        &quot;image&quot;: &quot;assets/native/perk_cold_blooded_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;hardwired&quot;,
+        &quot;name&quot;: &quot;Hard Wired&quot;,
+        &quot;tier&quot;: 1,
+        &quot;image&quot;: &quot;assets/native/perk_hardwired_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;scavenger&quot;,
+        &quot;name&quot;: &quot;Scavenger&quot;,
+        &quot;tier&quot;: 1,
+        &quot;image&quot;: &quot;assets/native/perk_scavenger_256.png&quot;
+      }
+    ],
+    [
+      {
+        &quot;id&quot;: &quot;dexterity&quot;,
+        &quot;name&quot;: &quot;Dexterity&quot;,
+        &quot;tier&quot;: 2,
+        &quot;image&quot;: &quot;assets/native/perk_dexterity_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;marathon&quot;,
+        &quot;name&quot;: &quot;Extreme Conditioning&quot;,
+        &quot;tier&quot;: 2,
+        &quot;image&quot;: &quot;assets/native/perk_marathon_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;hacker&quot;,
+        &quot;name&quot;: &quot;Engineer&quot;,
+        &quot;tier&quot;: 2,
+        &quot;image&quot;: &quot;assets/native/perk_hacker_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;ninja&quot;,
+        &quot;name&quot;: &quot;Dead Silence&quot;,
+        &quot;tier&quot;: 2,
+        &quot;image&quot;: &quot;assets/native/perk_ninja_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;tactical_mask&quot;,
+        &quot;name&quot;: &quot;Tactical Mask&quot;,
+        &quot;tier&quot;: 2,
+        &quot;image&quot;: &quot;assets/native/perk_tactical_mask_256.png&quot;
+      },
+      {
+        &quot;id&quot;: &quot;awareness&quot;,
+        &quot;name&quot;: &quot;Awareness&quot;,
+        &quot;tier&quot;: 2,
+        &quot;image&quot;: &quot;assets/native/perk_awareness_256.png&quot;
+      }
+    ]
+  ],
+  &quot;lethals&quot;: [
+    {
+      &quot;name&quot;: &quot;Frag Grenade&quot;,
+      &quot;image&quot;: &quot;assets/native/grenadeicon.png&quot;,
+      &quot;id&quot;: &quot;frag_grenade&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Semtex&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_sticky_grenade.png&quot;,
+      &quot;id&quot;: &quot;semtex&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Combat Axe&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_hatchet.png&quot;,
+      &quot;id&quot;: &quot;combat_axe&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Bouncing Betty&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_bounce_betty.png&quot;,
+      &quot;id&quot;: &quot;bouncing_betty&quot;
+    },
+    {
+      &quot;name&quot;: &quot;C4&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_satchelcharge.png&quot;,
+      &quot;id&quot;: &quot;c4&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Claymore&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_claymore.png&quot;,
+      &quot;id&quot;: &quot;claymore&quot;
+    }
+  ],
+  &quot;tacticals&quot;: [
+    {
+      &quot;name&quot;: &quot;Concussion&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_us_stungrenade.png&quot;,
+      &quot;id&quot;: &quot;concussion&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Flashbang&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_us_flashgrenade.png&quot;,
+      &quot;id&quot;: &quot;flashbang&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Smoke Grenade&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_us_smokegrenade.png&quot;,
+      &quot;id&quot;: &quot;smoke_grenade&quot;
+    },
+    {
+      &quot;name&quot;: &quot;EMP Grenade&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_empgrenade.png&quot;,
+      &quot;id&quot;: &quot;emp_grenade&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Tactical Insertion&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_tact_insert.png&quot;,
+      &quot;id&quot;: &quot;tactical_insertion&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Black Hat&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_uav_radio.png&quot;,
+      &quot;id&quot;: &quot;black_hat&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Shock Charge&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_proximitymine.png&quot;,
+      &quot;id&quot;: &quot;shock_charge&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Sensor Grenade&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_sensor_grenade.png&quot;,
+      &quot;id&quot;: &quot;sensor_grenade&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Trophy System&quot;,
+      &quot;image&quot;: &quot;assets/native/hud_trophy_system.png&quot;,
+      &quot;id&quot;: &quot;trophy_system&quot;
+    }
+  ],
+  &quot;camos&quot;: [
+    {
+      &quot;name&quot;: &quot;Art of War&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_artofwar_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo0&quot;
+    },
+    {
+      &quot;name&quot;: &quot;ATACS&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_atacs_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo1&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Cherry Blossom&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_blossom_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo2&quot;
+    },
+    {
+      &quot;name&quot;: &quot;BO2 Collector's&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_bo2_collectors_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo3&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Carbon Fiber&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_carbon.png&quot;,
+      &quot;id&quot;: &quot;camo4&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Choco&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_choco_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo5&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Diamond&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_diamond.png&quot;,
+      &quot;id&quot;: &quot;camo6&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Elite&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_elite_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo7&quot;
+    },
+    {
+      &quot;name&quot;: &quot;ERDL&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_erdl_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo8&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Gold&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_gold_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo9&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Kryptek&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_kryptek_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo10&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Bloodshot&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_matuka_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo11&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Afterlife&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_afterlife.png&quot;,
+      &quot;id&quot;: &quot;camo12&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Armor&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_armor.png&quot;,
+      &quot;id&quot;: &quot;camo13&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Bacon&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_bacon.png&quot;,
+      &quot;id&quot;: &quot;camo14&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Beast&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_beast.png&quot;,
+      &quot;id&quot;: &quot;camo15&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Benjamins&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_ben.png&quot;,
+      &quot;id&quot;: &quot;camo16&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Comics&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_comics.png&quot;,
+      &quot;id&quot;: &quot;camo17&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Day of the Dead&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_dayofdead.png&quot;,
+      &quot;id&quot;: &quot;camo18&quot;
+    },
+    {
+      &quot;name&quot;: &quot;DMH&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_dmh.png&quot;,
+      &quot;id&quot;: &quot;camo19&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Dragon&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_dragon.png&quot;,
+      &quot;id&quot;: &quot;camo20&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Ghost&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_ghost_128.png&quot;,
+      &quot;id&quot;: &quot;camo21&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Graffiti&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_graf.png&quot;,
+      &quot;id&quot;: &quot;camo22&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Kawaii&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_kawaii.png&quot;,
+      &quot;id&quot;: &quot;camo23&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Military&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_mil.png&quot;,
+      &quot;id&quot;: &quot;camo24&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Octane&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_octane.png&quot;,
+      &quot;id&quot;: &quot;camo25&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Party Rock&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_partyrock.png&quot;,
+      &quot;id&quot;: &quot;camo26&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Snake&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_snake.png&quot;,
+      &quot;id&quot;: &quot;camo27&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Weaponized 115&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_w115.png&quot;,
+      &quot;id&quot;: &quot;camo28&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Zombies&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_zombies.png&quot;,
+      &quot;id&quot;: &quot;camo29&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Aqua&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx3_aqua.png&quot;,
+      &quot;id&quot;: &quot;camo30&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Breach&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx3_breach.png&quot;,
+      &quot;id&quot;: &quot;camo31&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Coyote&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx3_dcoyote.png&quot;,
+      &quot;id&quot;: &quot;camo32&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Rogue&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx3_massacre.png&quot;,
+      &quot;id&quot;: &quot;camo33&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Pack-a-Punch&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx3_pap.png&quot;,
+      &quot;id&quot;: &quot;camo34&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Glam&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx3_zulu.png&quot;,
+      &quot;id&quot;: &quot;camo35&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Siberia&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_siberia_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo36&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Skulls&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_skulls_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo37&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Blue Tiger&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_tiger_blue_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo38&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Ghostex&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_ghostex_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo39&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Cyborg&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_cybertron.png&quot;,
+      &quot;id&quot;: &quot;camo40&quot;
+    },
+    {
+      &quot;name&quot;: &quot;UK Punk&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_mtx_punk.png&quot;,
+      &quot;id&quot;: &quot;camo41&quot;
+    },
+    {
+      &quot;name&quot;: &quot;Ronin&quot;,
+      &quot;image&quot;: &quot;assets/menu_camo_ronin_pattern.png&quot;,
+      &quot;id&quot;: &quot;camo42&quot;
+    }
+  ]
+};
+&lt;/script&gt;&lt;script&gt;/* BO2 multiplayer catalog and Pick 10 / private-match budget rules. */
+(function(g){
+const D=g.BO2_DATA,by=(xs,id)=&gt;xs.find(x=&gt;x.id===id),clone=x=&gt;JSON.parse(JSON.stringify(x));
+const optics=['reflex','eotech','hybrid','acog','target','mms','dualband','zoom','irons'];
+const conflicts=[['fastmag','extended'],['suppressor','longbarrel'],['selectfire','gl'],['selectfire','hybrid'],['gl','hybrid'],['gl','grip'],['mms','fmj'],['cpu','acog'],['cpu','irons']];
+const pair=(a,b)=&gt;a!==b&amp;&amp;a!=='dualwield'&amp;&amp;b!=='dualwield'&amp;&amp;!(optics.includes(a)&amp;&amp;optics.includes(b))&amp;&amp;!conflicts.some(([x,y])=&gt;a===x&amp;&amp;b===y||a===y&amp;&amp;b===x);
+const weapon=id=&gt;by(D.weapons,id),att=id=&gt;by(D.attachments,id);
+function allowed(w,ids){return !!w&amp;&amp;ids.length&lt;=3&amp;&amp;ids.every((a,i)=&gt;w.attachments.includes(a)&amp;&amp;ids.slice(0,i).every(b=&gt;pair(a,b)));}
+function wildcards(l){let w=[];if(weapon(l.secondary.id)?.primary)w.push('Overkill');if(l.primary.attachments.length&gt;2)w.push('Primary Gunfighter');if(l.secondary.attachments.length&gt;1)w.push('Secondary Gunfighter');l.perks.forEach((p,i)=&gt;{if(p.length&gt;1)w.push('Perk '+(i+1)+' Greed');});if(l.lethal?.count&gt;1)w.push('Danger Close');return w;}
+const cost=l=&gt;2+l.primary.attachments.length+l.secondary.attachments.length+l.perks.flat().length+(l.lethal?.count||0)+(l.tactical?.count||0)+wildcards(l).length;
+function modeAllows(l,mode){return mode!=='trickshot'||weapon(l.primary.id)?.category==='sniper'&amp;&amp;['assault_rifle','pistol'].includes(weapon(l.secondary.id)?.category);}
+function valid(l,limit=17,mode='regular'){
+try{return !!l&amp;&amp;modeAllows(l,mode)&amp;&amp;weapon(l.primary.id)?.primary&amp;&amp;l.primary.id!==l.secondary.id&amp;&amp;allowed(weapon(l.primary.id),l.primary.attachments)&amp;&amp;allowed(weapon(l.secondary.id),l.secondary.attachments)&amp;&amp;l.secondary.attachments.length&lt;=2&amp;&amp;[l.primary,l.secondary].every(w=&gt;by(D.camos,w.camo))&amp;&amp;l.perks.length===3&amp;&amp;l.perks.every((p,i)=&gt;p.length&gt;=1&amp;&amp;p.length&lt;=2&amp;&amp;new Set(p).size===p.length&amp;&amp;p.every(id=&gt;by(D.perks[i],id)))&amp;&amp;[l.lethal,l.tactical].every((e,i)=&gt;e===null||e&amp;&amp;[1,2].includes(e.count)&amp;&amp;by(i?D.tacticals:D.lethals,e.id))&amp;&amp;wildcards(l).length&lt;=3&amp;&amp;cost(l)&lt;=limit;}catch{return false;}}
+const pick=(xs,r)=&gt;xs[Math.floor(r()*xs.length)];
+function generate(previous,locks,{mode='trickshot',limit=10}={},r=Math.random){
+const pPool=D.weapons.filter(w=&gt;w.primary&amp;&amp;(mode!=='trickshot'||w.category==='sniper'));
+const locked=key=&gt;!!locks?.[key]&amp;&amp;!!previous;
+if(previous&amp;&amp;!modeAllows(previous,mode)&amp;&amp;((locked('primary')&amp;&amp;weapon(previous.primary.id).category!=='sniper')||(locked('secondary')&amp;&amp;!['assault_rifle','pistol'].includes(weapon(previous.secondary.id).category))))return {error:'Unlock the weapon outside the Trickshot pool before changing mode.'};
+for(let attempt=0;attempt&lt;120;attempt++){
+const p=locked('primary')?clone(previous.primary):{id:pick(pPool,r).id,attachments:[],camo:pick(D.camos,r).id};
+const sPool=D.weapons.filter(w=&gt;w.id!==p.id&amp;&amp;(mode==='trickshot'?['pistol','assault_rifle'].includes(w.category):true));
+const s=locked('secondary')?clone(previous.secondary):{id:pick(sPool,r).id,attachments:[],camo:pick(D.camos,r).id};
+const l={primary:p,secondary:s,perks:locked('perks')?clone(previous.perks):(mode==='trickshot'?[['lightweight'],[pick(['warrior','fast_hands'],r)],['dexterity']]:D.perks.map(ps=&gt;[pick(ps,r).id])),lethal:locked('lethal')?clone(previous.lethal):null,tactical:locked('tactical')?clone(previous.tactical):null};
+if(!valid(l,limit,mode))continue;
+// Optional equipment is decided separately so either, both or neither can appear.
+for(const [key,catalog] of [['lethal',D.lethals],['tactical',D.tacticals]])if(!locked(key)&amp;&amp;r()&lt;.65){l[key]={id:pick(catalog,r).id,count:1};if(!valid(l,limit,mode))l[key]=null;}
+// Pick an attachment budget before considering individual attachments.
+// Spare private-match points should not automatically fill every weapon slot.
+const attachmentTargets = limit===17
+  ? {primary:pick([0,1,1,1,2,2,2,3],r),secondary:pick([0,1,1,2],r)}
+  : {primary:3,secondary:2};
+const operations=[];
+for(const key of ['primary','secondary'])if(!locked(key))for(const a of weapon(l[key].id).attachments)operations.push({key,a});
+if(!locked('perks')&amp;&amp;mode==='regular')D.perks.forEach((ps,tier)=&gt;ps.forEach(p=&gt;operations.push({key:'perks',tier,id:p.id})));
+for(const key of ['lethal','tactical'])if(!locked(key)&amp;&amp;l[key])operations.push({key,quantity:true});
+for(let i=operations.length-1;i&gt;0;i--){const j=Math.floor(r()*(i+1));[operations[i],operations[j]]=[operations[j],operations[i]];}
+for(const op of operations){if(op.a &amp;&amp; l[op.key].attachments.length&gt;=attachmentTargets[op.key])continue;if(r()&lt;(limit===17?.12:.28))continue;const next=clone(l);if(op.a)next[op.key].attachments.push(op.a);else if(op.key==='perks')next.perks[op.tier].push(op.id);else next[op.key].count=2;if(valid(next,limit,mode))Object.assign(l,next);}
+return {loadout:l};
+}return {error:'Locked selections do not fit this limit. Unlock a section or choose 17 slots.'};}
+g.BO2_ENGINE={weapon,att,allowed,pair,cost,wildcards,valid,modeAllows,generate,clone};
+})(globalThis);
+
+&lt;/script&gt;&lt;script&gt;(function(){'use strict';
+const D=BO2_DATA,E=BO2_ENGINE,KEY='shopbysawr.bo2.classes.v2',q=s=&gt;document.querySelector(s),clone=E.clone;
+const find=(xs,id)=&gt;xs.find(x=&gt;x.id===id),esc=s=&gt;String(s).replace(/[&amp;&lt;&gt;&quot;']/g,c=&gt;({'&amp;':'&amp;amp;','&lt;':'&amp;lt;','&gt;':'&amp;gt;','&quot;':'&amp;quot;',&quot;'&quot;:'&amp;#39;'}[c]));
+const asset=p=&gt;(globalThis.BO2_ASSET_BASE||'')+p;
+const empty=i=&gt;({name:'Custom '+(i+1),mode:'trickshot',limit:10,locks:{primary:false,secondary:false,perks:false,lethal:false,tactical:false},loadout:null});
+let state={version:2,selected:0,slots:Array.from({length:5},(_,i)=&gt;empty(i))},notice='';
+const current=()=&gt;state.slots[state.selected];
+function save(){try{localStorage.setItem(KEY,JSON.stringify(state));q('#save-note').textContent='Classes saved on this device';}catch{q('#save-note').textContent='Storage unavailable — saved for this visit only';}}
+function migrate(){try{const old=JSON.parse(localStorage.getItem('shopbysawr.bo2.classes.v1'));if(!old?.slots)return;state.selected=old.selectedSlot||0;old.slots.forEach((s,i)=&gt;{if(!s?.items||i&gt;4)return;const x=s.items,slot=empty(i),lookup=(xs,n)=&gt;xs.find(v=&gt;v.name.toLowerCase()===String(n).toLowerCase())?.id;
+const gun=(key)=&gt;{const id=lookup(D.weapons,x[key]);if(!id)return null;const w=E.weapon(id),a=[];for(const name of x[key+'Attachments']||[]){const aid=lookup(D.attachments,name);if(aid&amp;&amp;E.allowed(w,[...a,aid]))a.push(aid);}return {id,attachments:a,camo:lookup(D.camos,x[key+'Camo'])||D.camos[0].id};};
+const l={primary:gun('primary'),secondary:gun('secondary'),perks:D.perks.map((ps,t)=&gt;[lookup(ps,x['perk'+(t+1)])||ps[0].id]),lethal:{id:lookup(D.lethals,x.lethal),count:1},tactical:{id:lookup(D.tacticals,x.tactical),count:1}};
+if(!E.valid(l,17,'regular'))return;slot.loadout=l;slot.limit=E.cost(l)&gt;10?17:10;slot.mode=E.modeAllows(l,'trickshot')?'trickshot':'regular';['primary','secondary','perks','lethal','tactical'].forEach((key,j)=&gt;slot.locks[key]=!!s.locks?.[Math.min(j,3)]);state.slots[i]=slot;});}catch{}}
+function load(){try{const raw=JSON.parse(localStorage.getItem(KEY));if(raw?.version===2&amp;&amp;Array.isArray(raw.slots)&amp;&amp;raw.slots.length===5){state.selected=Number.isInteger(raw.selected)&amp;&amp;raw.selected&gt;=0&amp;&amp;raw.selected&lt;5?raw.selected:0;state.slots=raw.slots.map((s,i)=&gt;{const slot=empty(i);if(!s)return slot;slot.name=typeof s.name==='string'&amp;&amp;s.name.trim()?s.name.trim().slice(0,28):slot.name;slot.mode=s.mode==='regular'?'regular':'trickshot';slot.limit=s.limit===17?17:10;if(E.valid(s.loadout,slot.limit,slot.mode)){slot.loadout=s.loadout;Object.keys(slot.locks).forEach(k=&gt;slot.locks[k]=s.locks?.[k]===true);}return slot;});return;}}catch{}migrate();}
+const image=(obj,cls='')=&gt;obj?'&lt;img class=&quot;'+cls+'&quot; src=&quot;'+esc(asset(obj.image))+'&quot; alt=&quot;'+esc(obj.name)+'&quot; title=&quot;'+esc(obj.name)+'&quot;&gt;':'&lt;span class=&quot;empty&quot;&gt;None&lt;/span&gt;';
+const lock=key=&gt;'&lt;button type=&quot;button&quot; class=&quot;lock&quot; data-lock=&quot;'+key+'&quot; aria-pressed=&quot;'+current().locks[key]+'&quot; aria-label=&quot;'+(current().locks[key]?'Unlock ':'Lock ')+key+'&quot;&gt;&lt;svg viewBox=&quot;0 0 24 24&quot; fill=&quot;none&quot; stroke=&quot;currentColor&quot; stroke-width=&quot;1.8&quot; stroke-linecap=&quot;round&quot;&gt;&lt;rect x=&quot;5&quot; y=&quot;10&quot; width=&quot;14&quot; height=&quot;11&quot; rx=&quot;2&quot;/&gt;&lt;path d=&quot;'+(current().locks[key]?'M8 10V6a4 4 0 0 1 8 0v4':'M8 10V6a4 4 0 0 1 7.5-2')+'&quot;/&gt;&lt;path d=&quot;M12 14v3&quot;/&gt;&lt;/svg&gt;&lt;/button&gt;';
+function weaponCard(key){const l=current().loadout[key],w=E.weapon(l.id);return '&lt;section class=&quot;panel weapon-card '+(current().locks[key]?'locked':'')+'&quot; data-section=&quot;'+key+'&quot;&gt;&lt;div class=&quot;panel-header&quot;&gt;&lt;h2&gt;'+key.toUpperCase()+'&lt;/h2&gt;'+lock(key)+'&lt;/div&gt;'+image(w,'weapon-image')+'&lt;h3 class=&quot;weapon-name&quot;&gt;'+esc(w.name)+'&lt;/h3&gt;&lt;div class=&quot;mods&quot;&gt;&lt;section class=&quot;mod-box&quot;&gt;&lt;h3&gt;ATTACHMENTS&lt;/h3&gt;&lt;div class=&quot;mod-images&quot;&gt;'+(l.attachments.length?l.attachments.map(a=&gt;image(E.att(a))).join(''):'&lt;span class=&quot;empty&quot;&gt;None&lt;/span&gt;')+'&lt;/div&gt;&lt;/section&gt;&lt;section class=&quot;mod-box&quot;&gt;&lt;h3&gt;CAMO&lt;/h3&gt;&lt;div class=&quot;mod-images camo&quot;&gt;'+image(find(D.camos,l.camo))+'&lt;/div&gt;&lt;/section&gt;&lt;/div&gt;&lt;/section&gt;';}
+function render(){const s=current(),l=s.loadout;q('#classes').innerHTML=state.slots.map((x,i)=&gt;'&lt;button type=&quot;button&quot; data-class=&quot;'+i+'&quot; aria-pressed=&quot;'+(i===state.selected)+'&quot; title=&quot;'+esc(x.name)+'&quot;&gt;'+esc(x.name)+'&lt;/button&gt;').join('');q('#class-name').value=s.name;
+document.querySelectorAll('[data-mode]').forEach(b=&gt;b.setAttribute('aria-pressed',b.dataset.mode===s.mode));document.querySelectorAll('[data-limit]').forEach(b=&gt;b.setAttribute('aria-pressed',Number(b.dataset.limit)===s.limit));q('#weapons').innerHTML=weaponCard('primary')+weaponCard('secondary');
+q('#perks').classList.toggle('locked',s.locks.perks);q('#perks').innerHTML='&lt;div class=&quot;panel-header&quot;&gt;&lt;h2&gt;PERKS&lt;/h2&gt;'+lock('perks')+'&lt;/div&gt;'+l.perks.map((ids,i)=&gt;'&lt;div class=&quot;perk-row&quot;&gt;&lt;div class=&quot;perk-copy&quot;&gt;&lt;small&gt;PERK '+(i+1)+'&lt;/small&gt;'+ids.map(id=&gt;esc(find(D.perks[i],id).name)).join('&lt;br&gt;')+'&lt;/div&gt;&lt;div class=&quot;perk-icons&quot;&gt;'+ids.map(id=&gt;image(find(D.perks[i],id))).join('')+'&lt;/div&gt;&lt;/div&gt;').join('');
+for(const key of ['lethal','tactical']){const catalog=key==='lethal'?D.lethals:D.tacticals,e=l[key],obj=e?find(catalog,e.id):null,el=q('#'+key);el.classList.toggle('locked',s.locks[key]);el.innerHTML='&lt;div class=&quot;panel-header&quot;&gt;&lt;h2&gt;'+key.toUpperCase()+'&lt;/h2&gt;'+lock(key)+'&lt;/div&gt;&lt;div class=&quot;equipment-body&quot;&gt;&lt;span class=&quot;equipment-name&quot;&gt;'+(obj?esc(obj.name)+(e.count&gt;1?' × '+e.count:''):'None')+'&lt;/span&gt;'+(obj?image(obj):'')+'&lt;/div&gt;';}
+const points=E.cost(l),cards=E.wildcards(l);q('#points').textContent=points+'/'+s.limit;q('#point-bars').innerHTML=Array.from({length:s.limit},(_,i)=&gt;'&lt;i class=&quot;'+(i&lt;points?'used':'')+'&quot;&gt;&lt;/i&gt;').join('');q('#cost-info').textContent='Weapons: 2 · Attachments: '+(l.primary.attachments.length+l.secondary.attachments.length)+' · Perks: '+l.perks.flat().length+' · Equipment: '+((l.lethal?.count||0)+(l.tactical?.count||0))+' · Wildcards: '+cards.length+(cards.length?' ('+cards.join(', ')+')':'')+'. '+s.limit+' is the maximum, not a required total.';q('#message').textContent=notice;}
+function generate(options){const s=current(),next={mode:options?.mode||s.mode,limit:options?.limit||s.limit},result=E.generate(s.loadout,s.locks,next);if(result.error){notice=result.error;render();return false;}s.loadout=result.loadout;Object.assign(s,next);notice='';save();render();return true;}
+q('#bo2-app').addEventListener('click',e=&gt;{const b=e.target.closest('button');if(!b)return;if(b.dataset.class!==undefined){state.selected=Number(b.dataset.class);notice='';if(!current().loadout)generate();else{save();render();}}else if(b.dataset.lock){const key=b.dataset.lock;current().locks[key]=!current().locks[key];save();render();q('[data-lock=&quot;'+key+'&quot;]').focus();}else if(b.dataset.mode){generate({mode:b.dataset.mode});}else if(b.dataset.limit){generate({limit:Number(b.dataset.limit)});}else if(b.id==='generate')generate();});
+q('#rename-form').addEventListener('submit',e=&gt;{e.preventDefault();const value=q('#class-name').value.trim();if(!value){q('#class-name').focus();return;}current().name=value.slice(0,28);notice='Class name saved';save();render();});
+document.addEventListener('keydown',e=&gt;{if(e.code==='Space'&amp;&amp;!e.repeat&amp;&amp;!e.target.closest('input,textarea,select,button,summary,[contenteditable=true]')){e.preventDefault();generate();}});
+load();if(!current().loadout)generate();else{render();save();}
+globalThis.BO2_APP={getState:()=&gt;clone(state),generate};
+})();
+&lt;/script&gt;&lt;script&gt;function reportHeight(){parent.postMessage({type:&quot;shopbysawr-bo2-height&quot;,height:Math.ceil(document.querySelector(&quot;#bo2-app&quot;).getBoundingClientRect().height)+2},&quot;*&quot;)}new ResizeObserver(reportHeight).observe(document.querySelector(&quot;#bo2-app&quot;));addEventListener(&quot;load&quot;,reportHeight);&lt;/script&gt;&lt;/body&gt;&lt;/html&gt;
+"></iframe><script>(function(){const frame=document.currentScript.previousElementSibling;addEventListener("message",function(event){if(event.source!==frame.contentWindow||event.data?.type!=="shopbysawr-bo2-height")return;const height=Number(event.data.height);if(Number.isFinite(height)&&height>0&&height<20000)frame.style.height=Math.max(650,height)+"px";});})();</script>
